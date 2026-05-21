@@ -26,7 +26,8 @@ API REST para controle financeiro pessoal, criada para demonstrar fundamentos de
 ## Como Executar
 
 ```bash
-mvn spring-boot:run
+mvn clean package
+java -jar target/personal-finance-api-0.0.1-SNAPSHOT.jar
 ```
 
 A API ficará disponível em:
@@ -44,7 +45,8 @@ http://localhost:8080/docs
 ## Perfil PostgreSQL
 
 ```bash
-mvn spring-boot:run -Dspring-boot.run.profiles=postgres
+mvn clean package
+java -jar target/personal-finance-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=postgres
 ```
 
 Variáveis:
