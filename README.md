@@ -1,15 +1,16 @@
 # Personal Finance API
 
-API REST para controle financeiro pessoal, criada para demonstrar fundamentos de backend Java com regras de negócio simples e organização profissional.
+API REST para controle financeiro pessoal, criada para demonstrar fundamentos de backend Java com regras de negocio, persistencia e organizacao profissional.
 
 ## Funcionalidades
 
 - Cadastro e listagem de categorias.
-- Cadastro, listagem, atualização e remoção de transações.
-- Filtros por tipo e período.
-- Resumo mensal com entradas, saídas e saldo.
-- Validação entre tipo da categoria e tipo da transação.
-- Documentação via Swagger UI.
+- Cadastro, listagem, atualizacao e remocao de transacoes.
+- Filtros por tipo e periodo.
+- Resumo mensal com entradas, saidas e saldo.
+- Validacao entre tipo da categoria e tipo da transacao.
+- Documentacao via Swagger UI.
+- Execucao com H2 local ou PostgreSQL via Docker.
 
 ## Tecnologias
 
@@ -20,36 +21,44 @@ API REST para controle financeiro pessoal, criada para demonstrar fundamentos de
 - Bean Validation
 - H2 Database
 - PostgreSQL
+- Docker e Docker Compose
 - Maven
 - Swagger/OpenAPI
 
-## Como Executar
+## Como Executar Localmente
 
 ```bash
 mvn clean package
 java -jar target/personal-finance-api-0.0.1-SNAPSHOT.jar
 ```
 
-A API ficará disponível em:
-
-```text
-http://localhost:8080
-```
-
-Documentação Swagger:
+Swagger:
 
 ```text
 http://localhost:8080/docs
 ```
 
-## Perfil PostgreSQL
+## Como Executar com Docker
+
+```bash
+cp .env.example .env
+docker compose up --build
+```
+
+API:
+
+```text
+http://localhost:8080
+```
+
+## Perfil PostgreSQL sem Docker
 
 ```bash
 mvn clean package
 java -jar target/personal-finance-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=postgres
 ```
 
-Variáveis:
+Variaveis:
 
 ```text
 DB_URL=jdbc:postgresql://localhost:5432/personal_finance
@@ -75,16 +84,16 @@ Criar categoria:
 
 ```json
 {
-  "name": "Salário",
+  "name": "Salario",
   "type": "INCOME"
 }
 ```
 
-Criar transação:
+Criar transacao:
 
 ```json
 {
-  "description": "Salário mensal",
+  "description": "Salario mensal",
   "amount": 3500.00,
   "type": "INCOME",
   "transactionDate": "2026-05-21",
