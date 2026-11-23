@@ -1,16 +1,16 @@
 # Personal Finance API
 
-API REST para controle financeiro pessoal, criada para demonstrar fundamentos de backend Java com regras de negocio, persistencia e organizacao profissional.
+API REST para controle financeiro pessoal, criada para demonstrar fundamentos de backend Java com regras de negócio, persistência e organização profissional.
 
 ## Funcionalidades
 
 - Cadastro e listagem de categorias.
-- Cadastro, listagem, atualizacao e remocao de transacoes.
-- Filtros por tipo e periodo.
-- Resumo mensal com entradas, saidas e saldo.
-- Validacao entre tipo da categoria e tipo da transacao.
-- Documentacao via Swagger UI.
-- Execucao com H2 local ou PostgreSQL via Docker.
+- Cadastro, listagem, atualização e remoção de transações.
+- Filtros por tipo e período.
+- Resumo mensal com entradas, saídas e saldo.
+- Validação entre tipo da categoria e tipo da transação.
+- Documentação via Swagger UI.
+- Execução com H2 local ou PostgreSQL via Docker.
 
 ## Tecnologias
 
@@ -58,7 +58,7 @@ mvn clean package
 java -jar target/personal-finance-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=postgres
 ```
 
-Variaveis:
+Variáveis:
 
 ```text
 DB_URL=jdbc:postgresql://localhost:5432/personal_finance
@@ -89,7 +89,7 @@ Criar categoria:
 }
 ```
 
-Criar transacao:
+Criar transação:
 
 ```json
 {
